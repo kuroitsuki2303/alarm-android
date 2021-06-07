@@ -8,9 +8,16 @@
 
     <Button
         android:id="@+id/btnGo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/milk_pink"
         android:text="Đặt báo thức"
+        android:textColor="@color/purple"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -18,10 +25,17 @@
 
     <Button
         android:id="@+id/btn_cancel"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="71dp"
+        android:backgroundTint="@color/milk_pink"
         android:text="Hủy"
+        android:textColor="@color/purple"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/btnGo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -43,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Lặp lại"
-            android:textColor="@color/teal_700"
+            android:textColor="@color/purple"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -104,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Âm thanh"
-            android:textColor="@color/teal_700"
+            android:textColor="@color/purple"
             android:textSize="16sp"
             android:textStyle="bold" />
 
