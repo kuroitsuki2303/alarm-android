@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="@color/milk_pink"
         android:text="Đặt báo thức"
         android:textColor="@color/purple"
@@ -29,14 +30,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="71dp"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/milk_pink"
         android:text="Hủy"
         android:textColor="@color/purple"
         android:textSize="17sp"
         android:textStyle="bold"
         app:cornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnGo"
+        app:layout_constraintBottom_toTopOf="@+id/btnGo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
@@ -63,6 +64,9 @@
 
         <RadioGroup
             android:id="@+id/repeat_group"
+            android:background="@drawable/background_button_pick_music"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
@@ -73,6 +77,7 @@
                 android:id="@+id/btn_daily"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:buttonTint="@color/milk_pink"
                 android:text="Mỗi ngày"
                 tools:layout_conversion_absoluteHeight="48dp"
                 tools:layout_conversion_absoluteWidth="371dp"
@@ -86,6 +91,7 @@
 
             <RadioButton
                 android:id="@+id/btn_weekly"
+                android:buttonTint="@color/milk_pink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mỗi tuần"
@@ -101,9 +107,11 @@
 
             <RadioButton
                 android:id="@+id/btn_monthly"
+                android:buttonTint="@color/milk_pink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mỗi tháng"
+                android:paddingRight="5dp"
                 tools:layout_conversion_absoluteHeight="48dp"
                 tools:layout_conversion_absoluteWidth="371dp"
                 tools:layout_editor_absoluteX="20dp"
@@ -134,7 +142,7 @@
                 android:id="@+id/imageView3"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/ic_baseline_music_note_24"
+                android:src="@drawable/ic_musical_note"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -180,13 +188,13 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_marginStart="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/txtDate"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_calendar_today_24" />
+            app:srcCompat="@drawable/ic_calendar" />
 
         <TextView
             android:id="@+id/txtDate"
@@ -194,6 +202,7 @@
             android:layout_height="wrap_content"
             android:text="huhuhuhuhu"
             android:textSize="18sp"
+            android:textColor="@color/purple"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
