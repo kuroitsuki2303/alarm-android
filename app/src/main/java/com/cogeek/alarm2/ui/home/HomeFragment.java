@@ -3,6 +3,7 @@ package com.cogeek.alarm2.ui.home;
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -94,6 +95,10 @@ public class HomeFragment extends Fragment  {
             schedule();
         });
 
+        view.findViewById(R.id.btn_cancel).setOnClickListener(v -> {
+            cancel();
+        });
+
         view.findViewById(R.id.btnChooseMusic).setOnClickListener(v -> {
             NavHostFragment.findNavController(HomeFragment.this).navigate(R.id.action_FirstFragment_to_SecondFragment);
         });
@@ -141,11 +146,19 @@ public class HomeFragment extends Fragment  {
                 break;
         }
 
-        am.setRepeating(am.RTC_WAKEUP, myCalendar.getTimeInMillis(), 24*60*60*1000, pendingIntent);
+//        am.setRepeating(am.RTC_WAKEUP, myCalendar.getTimeInMillis(), 24*60*60*1000, pendingIntent);
 //        am.setInexactRepeating(am.RTC_WAKEUP, myCalendar.getTimeInMillis(), 24*60*60*1000, pendingIntent);
 //        am.setExact(am.RTC_WAKEUP,myCalendar.getTimeInMillis(),pendingIntent);
-        String toastText =  "Đặt báo thức thành công";
+        String toastText =  "Tạo báo thức thành công";
         Toast.makeText(getActivity(), toastText, Toast.LENGTH_LONG).show();
+    }
+
+    private void cancel() {
+        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+        Intent intent = new Intent(getActivity(), AlarmBroadcastReceiver.class);
+        PendingIntent alarmPendingIntent = PendingIntent.getBroadcast(getActivity(), REQUEST_CODE, intent, 0);
+        alarmManager.cancel(alarmPendingIntent);
+        Toast.makeText(getActivity(), "Đã hủy", Toast.LENGTH_SHORT).show();
     }
 
 
